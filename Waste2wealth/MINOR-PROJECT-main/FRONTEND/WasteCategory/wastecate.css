@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   background-image: url('https://cdn.pixabay.com/photo/2024/02/09/23/02/trees-8563877_1280.jpg');
+    padding: 10px;
+  }
+  .container {
+text-align: center;
+background-color: rgba(129, 199, 132, 0.5); /* Semi-transparent green */
+padding: 50px 20px;
+backdrop-filter: blur(20px); /* Blur effect */
+border-radius: 15px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 80%;
+max-width: 800px;
+height: 500px; /* Increased height */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+animation: popUp 0.7s ease-out forwards;
+}
+
+  /* Animations */
+@keyframes popUp {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+  .heading {
+    font-size: 28px;
+    font-weight: 600;
+    color: #0d2a0e;
+    margin-bottom: 30px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: white; /* Buttons stand out against green */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+
+  .biodegradable {
+    color: #4caf50; /* Green for biodegradable */
+  }
+
+  .non-biodegradable {
+    color: #1976d2; /* Blue for non-biodegradable */
+  }
+
+  .button-text {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .button {
+      width: 150px;
+      height: 150px;
+    }
+
+    .button-icon {
+      font-size: 40px;
+    }
+
+    .button-text {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .buttons {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }

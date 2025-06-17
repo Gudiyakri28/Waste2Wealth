@@ -1,0 +1,165 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1556180282-00faa35841d8?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Waste Impact Calculator Section */
+#impact-calculator {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Title with Icon */
+h2 {
+    font-size: 32px;
+    color: #28a745; /* Green color */
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 i {
+    margin-right: 10px;
+}
+
+/* Accent color for 'Impact' */
+b {
+    color: #ffb300; /* Yellow accent */
+}
+
+/* Description */
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 500;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Label Styling */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Input Styling */
+select, input {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #28a745;
+    border-radius: 6px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.05); /* Transparent background */
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+/* Input Focus Effect */
+select:focus, input:focus {
+    border-color: #ffb300;
+    background-color: #f4f4f4;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover and Focus Effects */
+button:hover, button:focus {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Result Text */
+#impact-result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    width: 0;
+    animation: typingAnimation 2s steps(30) 1s forwards, fadeInResult 1s ease-in-out 3s forwards;
+}
+/* Impact Result */
+#impact-result {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #312c2c;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/* FadeIn Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing Animation */
+@keyframes typingAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* FadeIn for Result */
+@keyframes fadeInResult {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Impact Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+      <!-- Waste Impact Calculator Section -->
+      <section id="impact-calculator">
+        <h2><i class="fas fa-leaf"></i> Waste <b>Impact</b> Calculator</h2>
+        <p>Discover how your small steps are helping the planet!</p>
+    
+        <form id="calculator-form">
+            <label for="waste-type">Waste Type:</label>
+            <select required id="waste-type" name="waste-type">
+                <option value="plastic">Plastic</option>
+                <option value="organic">Organic</option>
+                <option value="metal">Metal</option>
+            </select>
+    
+            <label for="weight">Waste Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" required placeholder="Enter weight of waste">
+    
+            <button type="button" onclick="calculateImpact()">Calculate Impact</button>
+        </form>
+    
+        <p id="impact-result"></p>
+    </section>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+// Typing animation for impact result
+function typeWriterEffect(text, element, speed = 50) {
+    let i = 0;
+    element.textContent = ''; // Clear existing content
+    const interval = setInterval(() => {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+        } else {
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
+// Waste Impact Calculator
+function calculateImpact() {
+    const wasteType = document.getElementById("waste-type").value;
+    const weight = document.getElementById("weight").value;
+    const resultElement = document.getElementById("impact-result");
+
+    let result = '';
+
+    if (wasteType === "plastic") {
+        result = `You saved approximately ${weight * 3.5} kg of CO2 from being emitted!`;
+    } else if (wasteType === "organic") {
+        result = `Your waste can help generate compost for ${weight * 2} square meters of farmland!`;
+    } else if (wasteType === "metal") {
+        result = `You saved around ${weight * 5} kg of raw materials!`;
+    }
+
+    // Trigger typing animation
+    typeWriterEffect(result, resultElement);
+}
+
+    </script>
+</body>
+</html>

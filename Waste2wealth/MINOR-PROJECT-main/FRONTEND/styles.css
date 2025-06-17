@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    
+}
+
+body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the video */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the full video fits without cutting */
+    z-index: -1; /* Sends the video to the background */
+    background-color: #ade8ab; /* Adds a background to fill empty spaces */
+}
+.logo img{
+    width: 23%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    animation: popAndRelax 2s infinite ease-in-out;
+   
+}
+
+
+
+body {
+    position: relative;
+}
+
+/* Navbar Styling */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: linear-gradient(135deg, #053407, #2f7e33);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 10vh;
+}
+
+header i {
+    font-size: 30px;
+    font-weight: 800;
+    color: black;
+    cursor: pointer;
+}
+
+/* Sidebar Menu */
+#full {
+    font-family: 'Times New Roman', Times;
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+    background: linear-gradient(135deg, #80e0a7, #1eae91); /* Lighter green gradient */
+    top: 0;
+    right: -20%; /* Initially hidden */
+    backdrop-filter: blur(10px);
+    padding: 150px 50px;
+    z-index: 20;
+    transition: right 0.5s ease; /* Smooth transition */
+}
+
+#full h4 {
+    font-size: 31px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+#full h4 a {
+    text-decoration: none;
+    color: rgb(9, 67, 6);
+}
+
+#full i {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    cursor: pointer;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    html, body {
+        overflow: hidden; /* Disable both vertical and horizontal scrolling on mobile */
+    }
+    #navbar {
+        padding: 15px 30px;
+    }
+
+    #full {
+        width: 60%;
+        right: -60%;
+        padding: 100px 30px;
+    }
+
+    #full h4 {
+        font-size: 25px;
+    }
+
+    #full i {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+  
+    html, body {
+        overflow: hidden; /* Disable both vertical and horizontal scrolling on mobile */
+    }
+    #navbar {
+        padding: 10px 20px;
+    }
+
+    #full {
+        width: 80%;
+        right: -80%;
+        padding: 80px 20px;
+    }
+
+    #full h4 {
+        font-size: 20px;
+    }
+
+    #full i {
+        font-size: 25px;
+    }
+}
+a{
+    text-decoration: none;
+    color: black;
+
+}
+
+@keyframes popAndRelax {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.5); /* Slightly larger */
+    }
+}
+
+#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+/* Styling the Video Background */
+#home #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the video */
+    width: 100%;
+    height: 100%;
+    object-fit:none ; /* Ensure the full video fits without cutting */
+    z-index: -1; /* Sends the video to the background */
+    background-color: #ade8ab; /* Adds a background to fill empty spaces */
+}
+
+/* Content Styling */
+#home .content {
+    z-index: 1; /* Ensures the content appears above the video */
+    text-align: center;
+    color: #0d4b0a;
+}
+
+
+#home{
+    height: 80vh;
+}
+
+#home h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+#home p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.button {
+    background-color: #4cca25;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.button:hover {
+    background-color: #cadd1e;
+}
+/* Footer Section */
+footer {
+    background: linear-gradient(135deg, #053407, #2f7e33);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+footer ul li a:hover {
+    color: #ffdf00; /* Hover effect for links */
+}
